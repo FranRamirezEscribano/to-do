@@ -12,8 +12,9 @@
         type="checkbox" name="done"
         id="done" [(ngModel)]="task.done"
         (change)="onCheckboxChange(task.id)"
-      >
-      <p id="task-done-text">Done</p>
+        >
+        <p id="task-done-text" *ngIf="task.done">Done</p>
+        <p id="task-done-text" *ngIf="!task.done">To be done</p>
     </span>
   </label>
 </div>
