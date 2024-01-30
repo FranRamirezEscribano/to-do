@@ -1,0 +1,25 @@
+.add-task-container {
+  position: fixed;
+  top: 11%;
+  left: 83%;
+}
+.add-task {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+}
+
+.tasks-container {
+  margin-top: 100px;
+  max-width: 960px;
+  background-color: #D9F0FF;
+}
+
+.no-tasks {
+  margin-top: 20px;
+  text-align: center;
+}
+.no-tasks > h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}

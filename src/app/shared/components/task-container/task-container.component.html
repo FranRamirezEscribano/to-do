@@ -1,0 +1,30 @@
+<main class="flex justify-center items-center">
+  <div
+    class="tasks-container p-6 rounded shadow-lg w-3/4"
+    *ngIf="tasks.length > 0;else emptyTasks"
+  >
+    <div class="flex flex-wrap -mx-2 justify-center">
+      <app-task-item
+        *ngFor="let task of tasks"
+        [task]="task"
+        (delete)="deleteTask($event)"
+        (updateTaskStatus)="updateTaskStatus($event)"
+      ></app-task-item>
+    </div>
+  </div>
+</main>
+<div class="add-task-container">
+  <button
+    (click)="addTaskModal.open()"
+    class="add-task bg-blue-500 hover:bg-blue-700 text-white">
+    <i class="fas fa-plus"></i>
+  </button>
+</div>
+<app-add-task-modal #addTaskModal (addTask)="onAddTask($event)"></app-add-task-modal>
+
+<ng-template #emptyTasks>
+  <div class="no-tasks">
+    <h1>Add something to do!</h1>
+    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXptemlkeWJ0MzZ0amlmejNocXVzczR3Ym1mY3pzazVjbGJwanhwZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UTek0q3N8osh8agH4Y/giphy.gif" alt="do something">
+  </div>
+</ng-template>

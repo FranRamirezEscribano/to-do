@@ -1,0 +1,20 @@
+<div class="modal" *ngIf="show">
+  <div class="modal-content">
+    <div class="modal-content-title">
+      <h2>Add task</h2>
+      <span class="close" (click)="close()">
+        <i class="fas fa-times"></i>
+      </span>
+    </div>
+
+    <form (submit)="submitTask()">
+      <label for="title">Title:</label>
+      <input type="text" id="title" [(ngModel)]="task.title" name="title" required>
+
+      <label for="description">Description:</label>
+      <input type="text" id="description" [(ngModel)]="task.description" name="description">
+
+      <button type="submit">Add task</button>
+    </form>
+  </div>
+</div>
